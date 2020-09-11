@@ -1,0 +1,21 @@
+import re
+
+pattern=re.compile(r'\d\d\d\d\d\d')
+
+names=open("names.txt", "r")
+namesLines = names.readlines()
+
+resultTable = []
+
+for line in namesLines:
+  result=re.search(pattern,line)
+  if result:
+    resultTable+= [result.group()]
+  else:
+    resultTable+= ['no Beast code']
+    
+#print (resultTable)
+
+for a in resultTable:
+  print(a)
+  
